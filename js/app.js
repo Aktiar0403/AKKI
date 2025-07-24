@@ -58,6 +58,14 @@ renderRulesList();
 renderVisitList();
 setupReferenceHelpers();
 
+function extractSuggestionsFromText(text) {
+  const lines = text.split('\n').filter(line =>
+    line.trim() && !line.startsWith("🩺") && !line.startsWith("Tell me") && !line.startsWith("Your data")
+  );
+  return lines.map(line => ({ suggestion: line.trim() }));
+}
+
+
 function setupReferenceHelpers() {
   Object.entries(referenceRanges).forEach(([id, range]) => {
     const input = document.getElementById(id);
@@ -238,7 +246,8 @@ document.getElementById('generate-diagnosis').addEventListener('click', () => {
   // Suggest medicines if diagnosisText is meaningful
   if (!diagnosisText.includes("Please fill") && !diagnosisText.includes("riddle yet unsolved")) {
   loadMedicines().then(allMeds => {
-    const diagnoses = extractSuggestionsFromText(diagnosisText); // helper below
+    const diagnoses = extractSuggestionsFromText(diagnosisText); 
+    // helper below
     const meds = getMedicinesForDiagnosis(diagnoses, allMeds);
     const medNames = meds.map(m => `${m.name} (${m.type || 'Rx'})`).join('\n');
     document.getElementById('med-name').value = medNames;
