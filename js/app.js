@@ -237,19 +237,16 @@ document.getElementById('generate-diagnosis').addEventListener('click', () => {
 
   // Suggest medicines if diagnosisText is meaningful
   if (!diagnosisText.includes("Please fill") && !diagnosisText.includes("riddle yet unsolved")) {
-loadMedicines().then(allMeds => {
-  const diagnoses = extractSuggestionsFromText(diagnosisText); // helper function below
-  const meds = getMedicinesForDiagnosis(diagnoses, allMeds);
-  const medNames = meds.map(m => `${m.name} (${m.type || 'Rx'})`).join('\n');
-  document.getElementById('med-name').value = medNames;
-});
-
-    const medNames = meds.map(m => `${m.name} (${m.type})`).join('\n');
+  loadMedicines().then(allMeds => {
+    const diagnoses = extractSuggestionsFromText(diagnosisText); // helper below
+    const meds = getMedicinesForDiagnosis(diagnoses, allMeds);
+    const medNames = meds.map(m => `${m.name} (${m.type || 'Rx'})`).join('\n');
     document.getElementById('med-name').value = medNames;
-  } else {
-    document.getElementById('med-name').value = '';
-  }
-});
+  });
+} else {
+  document.getElementById('med-name').value = '';
+}
+
 
 // Rule save
 document.getElementById('save-rule').addEventListener('click', () => {
@@ -305,21 +302,30 @@ document.getElementById('print-prescription').addEventListener('click', () => {
 
   const printableDiv = document.getElementById('printable-prescription');
   printableDiv.innerHTML = `
-    <h2>🩺 Dr. NephroCare Pro</h2>
-    <p><strong>Symptoms:</strong> ${symptoms}</p>
-    <p><strong>Diagnosis (Doctor-level):</strong> ${doctorDiagnosis}</p>
-    <p><strong>Diagnosis (Patient-friendly):</strong> ${patientDiagnosis}</p>
-    <h3>Prescription</h3>
-    <ul>
-      <li><strong>Medicine Name:</strong> ${medName || 'None'}</li>
-      <li><strong>Dose:</strong> ${dose || 'Not specified'}</li>
-      <li><strong>Doctor Notes:</strong> ${notes || 'None'}</li>
-      <li><strong>Patient Instructions:</strong> ${patientInstructions || 'None'}</li>
-    </ul>
-    <br>
-    <p>Verified by: ${doctorName}</p>`;
-  printableDiv.style.display = 'block';
-  window.print();
-  printableDiv.style.display = 'none';
+    <div style="font-family: Arial; padding: 20px;">
+      <h2 style="text-align: center;">🩺 Dr. NephroCare Pro</h2>
+      <p><strong>Symptoms:</strong> ${symptoms}</p>
+      <p><strong>Diagnosis (Doctor-level):</strong> ${doctorDiagnosis}</p>
+      <p><strong>Diagnosis (Patient-friendly):</strong> ${patientDiagnosis}</p>
+      <h3>Prescription</h3>
+      <ul>
+        <li><strong>Medicine Name:</strong> ${medName || 'None'}</li>
+        <li><strong>Dose:</strong> ${dose || 'Not specified'}</li>
+        <li><strong>Doctor Notes:</strong> ${notes || 'None'}</li>
+        <li><strong>Patient Instructions:</strong> ${patientInstructions || 'None'}</li>
+      </ul>
+      <br>
+      <p>Verified by: ${doctorName}</p>
+    </div>`;
+
+  // Generate PDF using html2pdf.js
+  html2pdf().from(printableDiv).set({
+    margin: 10,
+    filename: `Prescription_${new Date().toISOString().slice(0,10)}.pdf`,
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+  }).save();
+});
+
 
 });

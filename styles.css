@@ -309,3 +309,9 @@ input[type="number"].normal-range {
 input[type="number"].abnormal-range {
   background-color: #ffcccc;
 }
+#printable-prescription {
+  max-width: 800px;
+  margin: auto;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
