@@ -59,10 +59,25 @@ renderVisitList();
 setupReferenceHelpers();
 
 function extractSuggestionsFromText(text) {
-  const lines = text.split('\n').filter(line =>
-    line.trim() && !line.startsWith("🩺") && !line.startsWith("Tell me") && !line.startsWith("Your data")
-  );
-  return lines.map(line => ({ suggestion: line.trim() }));
+  const suggestions = [];
+  const lines = text.split('\n');
+
+  for (let line of lines) {
+    // Match phrases between asterisks like *CKD Stage 3*
+    const matches = line.match(/\*(.*?)\*/g);
+    if (matches) {
+      for (let match of matches) {
+        suggestions.push({ suggestion: match.replace(/\*/g, '') });
+      }
+    }
+
+    // Fallback: if no stars, use whole line if it’s clean
+    else if (line && !line.includes("riddle") && !line.includes("fill") && !line.includes("evaluate")) {
+      suggestions.push({ suggestion: line.trim() });
+    }
+  }
+
+  return suggestions;
 }
 
 
