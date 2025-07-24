@@ -1,29 +1,25 @@
-export let medicines = [];
+export async function loadMedicines() {
+  try {
+    const response = await fetch('./data/medicines.json');
+    const medicines = await response.json();
+    return medicines;
+  } catch (error) {
+    console.error('Failed to load medicines:', error);
+    return [];
+  }
 
-export function loadMedicines() {
-  return fetch('/medicines.json')
-    .then(response => response.json())
-    .then(data => {
-      medicines = data;
-      console.log('✅ Medicines loaded:', medicines);
-      return medicines;
-    })
-    .catch(error => {
-      console.error('❌ Error loading medicines:', error);
-    });
 }
+export function getMedicinesForDiagnosis(diagnoses, allMedicines) {
+  const relevantMeds = [];
 
-export function getMedicinesForDiagnosis(diagnosisText) {
-  if (!diagnosisText) return [];
+  for (const diag of diagnoses) {
+    const match = allMedicines.filter(med =>
+      med.linkedDiagnosis && med.linkedDiagnosis.includes(diag.suggestion)
+    );
+    relevantMeds.push(...match);
+  }
 
-  const suggestions = [];
-  medicines.forEach(med => {
-    med.indications.forEach(indication => {
-      if (diagnosisText.toLowerCase().includes(indication.toLowerCase())) {
-        suggestions.push(med);
-      }
-    });
-  });
-  return suggestions;
+  // Remove duplicates
+  const unique = Array.from(new Map(relevantMeds.map(med => [med.name, med])).values());
+  return unique;
 }
-

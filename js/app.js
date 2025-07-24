@@ -200,6 +200,14 @@ function generateExportText(visit) {
   text += `🧭 AI Diagnosis\nDoctor-level: ${visit.diagnosis.doctor || 'Not provided'}\nPatient-friendly: ${visit.diagnosis.patient || 'Not provided'}\n`;
   return text;
 }
+function extractSuggestionsFromText(diagnosisText) {
+  const lines = diagnosisText.split('\n');
+  return lines
+    .map(line => line.trim())
+    .filter(line => line && !line.startsWith("🩺") && !line.startsWith("🔍"))
+    .map(line => ({ suggestion: line }));
+}
+
 
 // Diagnosis generation button
 document.getElementById('generate-diagnosis').addEventListener('click', () => {
@@ -229,7 +237,13 @@ document.getElementById('generate-diagnosis').addEventListener('click', () => {
 
   // Suggest medicines if diagnosisText is meaningful
   if (!diagnosisText.includes("Please fill") && !diagnosisText.includes("riddle yet unsolved")) {
-    const meds = getMedicinesForDiagnosis(diagnosisText);
+loadMedicines().then(allMeds => {
+  const diagnoses = extractSuggestionsFromText(diagnosisText); // helper function below
+  const meds = getMedicinesForDiagnosis(diagnoses, allMeds);
+  const medNames = meds.map(m => `${m.name} (${m.type || 'Rx'})`).join('\n');
+  document.getElementById('med-name').value = medNames;
+});
+
     const medNames = meds.map(m => `${m.name} (${m.type})`).join('\n');
     document.getElementById('med-name').value = medNames;
   } else {

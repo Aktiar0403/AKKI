@@ -1,45 +1,975 @@
 [
   {
-    "conditions": [
-      "egfr < 45",
-      "potassium < 5.5"
-    ],
-    "meds": [
-      {
-        "name": "Sodium Bicarbonate",
-        "dose": "500 mg twice daily",
-        "reason": "To correct acidosis"
-      },
-      {
-        "name": "Calcium Carbonate",
-        "dose": "500 mg with meals",
-        "reason": "To manage phosphate"
-      }
-    ]
-  },
-  {
-    "conditions": [
-      "potassium > 5.5"
-    ],
-    "meds": [
-      {
-        "name": "Stop RAAS blockers",
-        "dose": "N/A",
-        "reason": "High potassium risk"
-      }
-    ]
-  },
-  {
-    "conditions": [
-      "edema",
-      "bp_systolic > 140"
-    ],
-    "meds": [
-      {
-        "name": "Furosemide",
-        "dose": "20 mg once daily",
-        "reason": "To manage fluid overload and hypertension"
-      }
-    ]
-  }
+  "name": "Telma 40",
+  "indication": "Hypertension in CKD patients",
+  "working": "Blocks angiotensin II receptors, lowering blood pressure and reducing proteinuria",
+  "composition": "Telmisartan 40mg",
+  "linkedDiagnosis": ["CKD Stage 2", "Hypertensive Nephrosclerosis"]
+},
+{
+  "name": "Repace 50",
+  "indication": "Hypertension in diabetic nephropathy",
+  "working": "ARB that relaxes blood vessels and reduces kidney damage",
+  "composition": "Losartan 50mg",
+  "linkedDiagnosis": ["Advanced Diabetic Nephropathy", "CKD Stage 3"]
+},
+{
+  "name": "Shelcal 500",
+  "indication": "CKD-related mineral bone disorder",
+  "working": "Replenishes calcium levels in patients with hypocalcemia",
+  "composition": "Calcium carbonate 500mg + Vitamin D3",
+  "linkedDiagnosis": ["CKD-MBD (Mineral Bone Disorder)"]
+},
+{
+  "name": "Razo 20",
+  "indication": "Gastritis or acid reflux in CKD",
+  "working": "Reduces stomach acid production, prevents GI irritation",
+  "composition": "Rabeprazole 20mg",
+  "linkedDiagnosis": ["CKD Stage 4", "CKD Stage 5 (ESRD)"]
+},
+{
+  "name": "Dytor 10",
+  "indication": "Edema in nephrotic syndrome or advanced CKD",
+  "working": "Loop diuretic that removes excess fluid",
+  "composition": "Torasemide 10mg",
+  "linkedDiagnosis": ["Nephrotic Syndrome", "CKD Stage 4 with Anemia"]
+},
+{
+  "name": "Erypro Safe 4000",
+  "indication": "Anemia due to CKD",
+  "working": "Erythropoietin analog stimulating red blood cell production",
+  "composition": "Epoetin Alfa 4000 IU",
+  "linkedDiagnosis": ["Anemia of CKD", "CKD Stage 5 (ESRD)"]
+},
+{
+  "name": "Calcijoint 0.25",
+  "indication": "Secondary hyperparathyroidism in CKD",
+  "working": "Active vitamin D3 form improving calcium absorption",
+  "composition": "Calcitriol 0.25mcg",
+  "linkedDiagnosis": ["CKD-MBD (Mineral Bone Disorder)"]
+},
+{
+  "name": "Cilacar 10",
+  "indication": "CKD with hypertension",
+  "working": "Calcium channel blocker to reduce BP without affecting kidney function",
+  "composition": "Cilnidipine 10mg",
+  "linkedDiagnosis": ["CKD Stage 2", "Hypertensive Nephrosclerosis"]
+},
+{
+  "name": "Ferricrit",
+  "indication": "Iron deficiency anemia in CKD",
+  "working": "IV iron preparation replenishing iron stores",
+  "composition": "Iron Sucrose 100mg/5ml",
+  "linkedDiagnosis": ["Anemia of CKD"]
+},
+{
+  "name": "Ferinject",
+  "indication": "CKD-related anemia requiring rapid iron repletion",
+  "working": "Parenteral iron complex with controlled release",
+  "composition": "Ferric Carboxymaltose 500mg/10ml",
+  "linkedDiagnosis": ["Anemia of CKD"]
+},
+{
+  "name": "Zyloric 100",
+  "indication": "Hyperuricemia in CKD patients",
+  "working": "Inhibits uric acid production via xanthine oxidase",
+  "composition": "Allopurinol 100mg",
+  "linkedDiagnosis": ["CKD Stage 3", "CKD Stage 4"]
+},
+{
+  "name": "Renolog",
+  "indication": "Multivitamin for dialysis patients",
+  "working": "Renal-safe vitamin B and folic acid formulation",
+  "composition": "Pyridoxine, Folic acid, Cyanocobalamin",
+  "linkedDiagnosis": ["CKD Stage 5 (ESRD)"]
+},
+{
+  "name": "Nephrocap",
+  "indication": "Nutritional supplement in CKD",
+  "working": "Essential vitamins and amino acids for renal patients",
+  "composition": "Multivitamin + Amino acids",
+  "linkedDiagnosis": ["CKD Stage 3", "CKD Stage 4", "CKD Stage 5 (ESRD)"]
+},
+{
+  "name": "Sodamint",
+  "indication": "Metabolic acidosis in CKD",
+  "working": "Alkali agent that buffers blood pH",
+  "composition": "Sodium bicarbonate 500mg",
+  "linkedDiagnosis": ["CKD Stage 4", "CKD Stage 5 (ESRD)"]
+},
+{
+  "name": "Renvela",
+  "indication": "Hyperphosphatemia in dialysis patients",
+  "working": "Non-calcium phosphate binder",
+  "composition": "Sevelamer carbonate 800mg",
+  "linkedDiagnosis": ["CKD-MBD (Mineral Bone Disorder)", "CKD Stage 5 (ESRD)"]
+},
+{
+  "name": "Calcigard 10",
+  "indication": "High BP in CKD",
+  "working": "Dihydropyridine calcium channel blocker",
+  "composition": "Nifedipine 10mg",
+  "linkedDiagnosis": ["CKD Stage 3", "Hypertensive Nephrosclerosis"]
+},
+{
+  "name": "Acitrom",
+  "indication": "CKD with atrial fibrillation or thrombosis",
+  "working": "Vitamin K antagonist anticoagulant",
+  "composition": "Acenocoumarol",
+  "linkedDiagnosis": ["CKD Stage 4", "CKD Stage 5 (ESRD)"]
+},
+{
+  "name": "Pantocid 40",
+  "indication": "Acid reflux in dialysis or CKD patients",
+  "working": "PPI that reduces acid production",
+  "composition": "Pantoprazole 40mg",
+  "linkedDiagnosis": ["CKD Stage 4", "Nephrotic Syndrome"]
+},
+{
+  "name": "Foracort Inhaler",
+  "indication": "CKD with associated asthma or COPD",
+  "working": "Inhaled corticosteroid + LABA",
+  "composition": "Budesonide + Formoterol",
+  "linkedDiagnosis": ["Breathlessness", "CKD Stage 4"]
+},
+{
+  "name": "Rosuvas 10",
+  "indication": "Dyslipidemia in CKD",
+  "working": "Statin that lowers LDL cholesterol",
+  "composition": "Rosuvastatin 10mg",
+  "linkedDiagnosis": ["CKD Stage 3", "Advanced Diabetic Nephropathy"]
+},
+{
+  "name": "Thyronorm 50",
+  "indication": "CKD with hypothyroidism",
+  "working": "Synthetic thyroid hormone replacement",
+  "composition": "Levothyroxine Sodium 50mcg",
+  "linkedDiagnosis": ["CKD Stage 3", "Anemia of CKD"]
+},
+{
+  "name": "Metformin 500 SR",
+  "indication": "Diabetic CKD (Stage 1–2 only)",
+  "working": "Improves insulin sensitivity and reduces hepatic glucose output",
+  "composition": "Metformin Hydrochloride 500mg SR",
+  "linkedDiagnosis": ["CKD Stage 1", "Diabetic Nephropathy"]
+},
+{
+  "name": "Teneligliptin 20",
+  "indication": "CKD with diabetes",
+  "working": "DPP-4 inhibitor that increases insulin secretion",
+  "composition": "Teneligliptin 20mg",
+  "linkedDiagnosis": ["CKD Stage 2", "Advanced Diabetic Nephropathy"]
+},
+{
+  "name": "Renoalfa",
+  "indication": "Nutritional therapy for CKD patients",
+  "working": "Alpha ketoanalogues of essential amino acids",
+  "composition": "Alpha Ketoanalogues",
+  "linkedDiagnosis": ["CKD Stage 3", "CKD Stage 4"]
+},
+{
+  "name": "Sodium Bicarbonate 500",
+  "indication": "Metabolic acidosis in CKD",
+  "working": "Alkali therapy to raise serum bicarbonate",
+  "composition": "Sodium Bicarbonate 500mg",
+  "linkedDiagnosis": ["CKD Stage 4", "CKD Stage 5 (ESRD)"]
+},
+{
+  "name": "Fosbait",
+  "indication": "Hyperphosphatemia in ESRD",
+  "working": "Phosphate binder that reduces phosphate absorption",
+  "composition": "Lanthanum Carbonate 500mg",
+  "linkedDiagnosis": ["CKD-MBD (Mineral Bone Disorder)", "CKD Stage 5 (ESRD)"]
+},
+{
+  "name": "Cardace 2.5",
+  "indication": "CKD with heart failure or proteinuria",
+  "working": "ACE inhibitor that reduces glomerular pressure",
+  "composition": "Ramipril 2.5mg",
+  "linkedDiagnosis": ["CKD Stage 2", "Advanced Diabetic Nephropathy"]
+},
+{
+  "name": "Nefrosave",
+  "indication": "Diabetic nephropathy support",
+  "working": "Antioxidant and cytoprotective formula",
+  "composition": "Acetylcysteine + Taurine",
+  "linkedDiagnosis": ["Diabetic Nephropathy"]
+},
+{
+  "name": "Tolvaptan",
+  "indication": "Autosomal Dominant Polycystic Kidney Disease",
+  "working": "Vasopressin V2 receptor antagonist that slows cyst growth",
+  "composition": "Tolvaptan 15mg",
+  "linkedDiagnosis": ["Polycystic Kidney Disease"]
+},
+{
+  "name": "Urocit-K",
+  "indication": "Prevention of kidney stones",
+  "working": "Alkalinizes urine and reduces stone formation",
+  "composition": "Potassium citrate 10mEq",
+  "linkedDiagnosis": ["Past Stone Disease", "Flank Pain"]
+},
+{
+  "name": "Fruselac",
+  "indication": "Edema and hyperkalemia in CKD",
+  "working": "Loop + potassium-losing diuretic combo",
+  "composition": "Furosemide + Spironolactone",
+  "linkedDiagnosis": ["Nephrotic Syndrome", "Hyperkalemia"]
+},
+{
+  "name": "Urofit-K",
+  "indication": "Urine alkalinization in renal tubular acidosis",
+  "working": "Potassium citrate-based alkalinizer",
+  "composition": "Potassium citrate + Magnesium citrate",
+  "linkedDiagnosis": ["Metabolic Acidosis", "Flank Pain"]
+},
+{
+  "name": "Finast 5",
+  "indication": "CKD patients with BPH",
+  "working": "5-alpha reductase inhibitor reduces prostate volume",
+  "composition": "Finasteride 5mg",
+  "linkedDiagnosis": ["CKD Stage 4", "Urinary Obstruction"]
+},
+{
+  "name": "Rocaltrol",
+  "indication": "Hypocalcemia due to CKD",
+  "working": "Active vitamin D that enhances calcium absorption",
+  "composition": "Calcitriol 0.25 mcg",
+  "linkedDiagnosis": ["CKD-MBD (Mineral Bone Disorder)"]
+},
+{
+  "name": "Zifi 200",
+  "indication": "UTI in CKD patients",
+  "working": "Third-generation cephalosporin antibiotic",
+  "composition": "Cefixime 200mg",
+  "linkedDiagnosis": ["UTI", "Hematuria"]
+},
+{
+  "name": "Nitrofurantoin 100",
+  "indication": "Recurrent UTI in women",
+  "working": "Urinary antiseptic",
+  "composition": "Nitrofurantoin 100mg",
+  "linkedDiagnosis": ["UTI", "Hematuria"]
+},
+{
+  "name": "Alpha D3",
+  "indication": "CKD with low vitamin D",
+  "working": "Vitamin D analog for renal insufficiency",
+  "composition": "Alfacalcidol 0.25mcg",
+  "linkedDiagnosis": ["CKD-MBD (Mineral Bone Disorder)"]
+},
+{
+  "name": "Lasix 40",
+  "indication": "Edema due to CKD or CHF",
+  "working": "Loop diuretic to promote diuresis",
+  "composition": "Furosemide 40mg",
+  "linkedDiagnosis": ["CKD Stage 4", "Nephrotic Syndrome"]
+},
+{
+  "name": "Telma CT",
+  "indication": "Resistant hypertension in CKD",
+  "working": "ARB + thiazide diuretic combo",
+  "composition": "Telmisartan + Chlorthalidone",
+  "linkedDiagnosis": ["Hypertensive Nephrosclerosis"]
+},
+{
+  "name": "Roseday 10",
+  "indication": "CKD with dyslipidemia",
+  "working": "Statin that reduces LDL cholesterol",
+  "composition": "Rosuvastatin 10mg",
+  "linkedDiagnosis": ["CKD Stage 3", "Advanced Diabetic Nephropathy"]
+},
+{
+  "name": "Dytor 10",
+  "indication": "Edema in CKD and CHF",
+  "working": "Loop diuretic that reduces fluid overload",
+  "composition": "Torasemide 10mg",
+  "linkedDiagnosis": ["CKD Stage 4", "Nephrotic Syndrome"]
+},
+{
+  "name": "Acitrom 1",
+  "indication": "CKD with thromboembolic risk",
+  "working": "Vitamin K antagonist anticoagulant",
+  "composition": "Acenocoumarol 1mg",
+  "linkedDiagnosis": ["CKD Stage 5 (ESRD)", "Atrial Fibrillation"]
+},
+{
+  "name": "Clopilet 75",
+  "indication": "CKD with cardiovascular risk",
+  "working": "Antiplatelet that prevents clot formation",
+  "composition": "Clopidogrel 75mg",
+  "linkedDiagnosis": ["CKD Stage 3", "Hypertensive Nephrosclerosis"]
+},
+{
+  "name": "Tide Plus",
+  "indication": "Hypertension with edema",
+  "working": "Loop diuretic with potassium-sparing effect",
+  "composition": "Torasemide + Spironolactone",
+  "linkedDiagnosis": ["CKD Stage 3", "Hyperkalemia"]
+},
+{
+  "name": "Calcium Sandoz",
+  "indication": "CKD with hypocalcemia",
+  "working": "Calcium supplement for bone health",
+  "composition": "Calcium carbonate + Vitamin D3",
+  "linkedDiagnosis": ["CKD-MBD (Mineral Bone Disorder)"]
+},
+{
+  "name": "Razo D",
+  "indication": "Gastric protection in CKD patients on NSAIDs",
+  "working": "PPI + prokinetic for reflux and ulcers",
+  "composition": "Rabeprazole + Domperidone",
+  "linkedDiagnosis": ["NSAID Use", "CKD Stage 3"]
+},
+{
+  "name": "Domstal",
+  "indication": "Nausea/vomiting in CKD",
+  "working": "Peripheral dopamine receptor antagonist",
+  "composition": "Domperidone 10mg",
+  "linkedDiagnosis": ["CKD Stage 4", "Nausea", "Vomiting"]
+},
+{
+  "name": "Ondem 4",
+  "indication": "CKD with uremic nausea or post-dialysis vomiting",
+  "working": "5-HT3 antagonist antiemetic",
+  "composition": "Ondansetron 4mg",
+  "linkedDiagnosis": ["CKD Stage 5 (ESRD)", "Nausea"]
+},
+{
+  "name": "Zyloric 100",
+  "indication": "Hyperuricemia with CKD or nephrolithiasis",
+  "working": "Xanthine oxidase inhibitor",
+  "composition": "Allopurinol 100mg",
+  "linkedDiagnosis": ["Flank Pain", "Past Stone Disease"]
+},
+{
+  "name": "Febustat 40",
+  "indication": "Urate nephropathy in CKD",
+  "working": "Non-purine selective xanthine oxidase inhibitor",
+  "composition": "Febuxostat 40mg",
+  "linkedDiagnosis": ["CKD Stage 3", "Hyperuricemia"]
+},
+{
+  "name": "Shelcal HD",
+  "indication": "CKD with osteoporosis",
+  "working": "Calcium + Vitamin D3 supplement",
+  "composition": "Calcium carbonate + Cholecalciferol",
+  "linkedDiagnosis": ["CKD-MBD (Mineral Bone Disorder)"]
+},
+{
+  "name": "Hifenac D",
+  "indication": "Pain control (with caution in CKD)",
+  "working": "NSAID with muscle relaxant",
+  "composition": "Aceclofenac + Drotaverine",
+  "linkedDiagnosis": ["Flank Pain", "NSAID Use"]
+},
+{
+  "name": "Zinetac 150",
+  "indication": "Gastritis in CKD patients",
+  "working": "H2 receptor antagonist",
+  "composition": "Ranitidine 150mg",
+  "linkedDiagnosis": ["CKD Stage 3", "Nausea"]
+},
+{
+  "name": "Nephrofit",
+  "indication": "Kidney tonic in CKD",
+  "working": "Ayurvedic formulation for nephroprotection",
+  "composition": "Herbal extracts",
+  "linkedDiagnosis": ["CKD Stage 2", "Nephrotic Syndrome"]
+},
+{
+  "name": "Biofer XT",
+  "indication": "Iron deficiency in CKD",
+  "working": "Iron and folic acid supplement",
+  "composition": "Ferrous Ascorbate + Folic Acid",
+  "linkedDiagnosis": ["Anemia of CKD"]
+},
+{
+  "name": "Dexorange",
+  "indication": "Anemia in CKD",
+  "working": "Iron, folic acid, B12 tonic",
+  "composition": "Ferric ammonium citrate + Folic acid + B12",
+  "linkedDiagnosis": ["Anemia of CKD"]
+},
+{
+  "name": "Eporise 4000",
+  "indication": "Erythropoietin deficiency anemia",
+  "working": "Erythropoietin stimulating agent",
+  "composition": "Recombinant human erythropoietin 4000 IU",
+  "linkedDiagnosis": ["CKD Stage 5 (ESRD)", "Anemia of CKD"]
+},
+{
+  "name": "Myhep",
+  "indication": "CKD with Hepatitis C",
+  "working": "Direct-acting antiviral therapy",
+  "composition": "Sofosbuvir + Ledipasvir",
+  "linkedDiagnosis": ["Hepatitis", "CKD Stage 3"]
+},
+{
+  "name": "Rifampicin 450",
+  "indication": "CKD with latent or active TB",
+  "working": "Bactericidal anti-TB drug",
+  "composition": "Rifampicin 450mg",
+  "linkedDiagnosis": ["TB", "CKD Stage 2"]
+},
+{
+  "name": "Foracort 200 Inhaler",
+  "indication": "CKD with breathlessness or COPD overlap",
+  "working": "Inhaled steroid + long-acting bronchodilator",
+  "composition": "Budesonide + Formoterol",
+  "linkedDiagnosis": ["Breathlessness", "CKD Stage 4"]
+},
+{
+  "name": "Asthalin Inhaler",
+  "indication": "Acute dyspnea in CKD",
+  "working": "Short-acting beta-2 agonist",
+  "composition": "Salbutamol",
+  "linkedDiagnosis": ["Breathlessness"]
+},
+{
+  "name": "Pan 40",
+  "indication": "GERD in CKD",
+  "working": "Proton pump inhibitor",
+  "composition": "Pantoprazole 40mg",
+  "linkedDiagnosis": ["Nausea", "CKD Stage 3"]
+},
+{
+  "name": "Cinacalcet 30",
+  "indication": "Secondary hyperparathyroidism in CKD",
+  "working": "Calcimimetic agent",
+  "composition": "Cinacalcet 30mg",
+  "linkedDiagnosis": ["CKD Stage 5 (ESRD)", "CKD-MBD (Mineral Bone Disorder)"]
+},
+{
+  "name": "Calcimax Forte",
+  "indication": "CKD-MBD or osteoporosis",
+  "working": "Balanced calcium + minerals",
+  "composition": "Calcium carbonate + Magnesium + Zinc + Vitamin D3",
+  "linkedDiagnosis": ["CKD-MBD (Mineral Bone Disorder)"]
+},
+{
+  "name": "Veltam F",
+  "indication": "BPH with CKD",
+  "working": "Alpha-blocker + 5-ARI",
+  "composition": "Tamsulosin + Finasteride",
+  "linkedDiagnosis": ["Urinary Obstruction"]
+},
+{
+  "name": "Tamsulosin 0.4",
+  "indication": "CKD with urinary retention/BPH",
+  "working": "Alpha-adrenergic blocker",
+  "composition": "Tamsulosin 0.4mg",
+  "linkedDiagnosis": ["Urinary Obstruction"]
+},
+{
+  "name": "Nephrozin",
+  "indication": "Supportive renal therapy (Ayurveda)",
+  "working": "Diuretic and nephroprotective herbal mix",
+  "composition": "Punarnava + Gokshura + Varun",
+  "linkedDiagnosis": ["CKD Stage 2", "Edema"]
+},
+{
+  "name": "Trika 0.25",
+  "indication": "Anxiety or insomnia in CKD patients",
+  "working": "Short-acting benzodiazepine",
+  "composition": "Alprazolam 0.25mg",
+  "linkedDiagnosis": ["CKD Stage 3", "Insomnia"]
+},
+{
+  "name": "Moxovas 0.3",
+  "indication": "Resistant hypertension in CKD",
+  "working": "Centrally acting antihypertensive",
+  "composition": "Moxonidine 0.3mg",
+  "linkedDiagnosis": ["CKD Stage 4", "Hypertensive Nephrosclerosis"]
+},
+{
+  "name": "Prega News",
+  "indication": "Early pregnancy detection in CKD women",
+  "working": "hCG-based detection",
+  "composition": "hCG antibodies (test strip)",
+  "linkedDiagnosis": ["CKD in Pregnancy"]
+},
+{
+  "name": "Cefakind 500",
+  "indication": "UTI with resistant organisms",
+  "working": "Broad-spectrum cephalosporin antibiotic",
+  "composition": "Cefuroxime axetil 500mg",
+  "linkedDiagnosis": ["UTI", "Hematuria"]
+},
+{
+  "name": "Etosid 50",
+  "indication": "Renal malignancies (chemotherapy)",
+  "working": "Cytotoxic drug used in nephro-oncology",
+  "composition": "Etoposide 50mg",
+  "linkedDiagnosis": ["Renal Tumor", "CKD Stage 4"]
+},
+{
+  "name": "Omnacortil 10",
+  "indication": "Nephrotic syndrome (immunosuppressive)",
+  "working": "Systemic corticosteroid",
+  "composition": "Prednisolone 10mg",
+  "linkedDiagnosis": ["Nephrotic Syndrome"]
+},
+{
+  "name": "Tacrograf 1",
+  "indication": "Renal transplant maintenance",
+  "working": "Calcineurin inhibitor immunosuppressant",
+  "composition": "Tacrolimus 1mg",
+  "linkedDiagnosis": ["Post-Renal Transplant"]
+},
+{
+  "name": "Myfortic 360",
+  "indication": "Maintenance immunosuppression post-transplant",
+  "working": "Inhibits T and B cell proliferation",
+  "composition": "Mycophenolate sodium 360mg",
+  "linkedDiagnosis": ["Post-Renal Transplant"]
+},
+{
+  "name": "Wysolone 20",
+  "indication": "Immunosuppression in nephrotic syndrome or lupus nephritis",
+  "working": "Anti-inflammatory corticosteroid",
+  "composition": "Prednisolone 20mg",
+  "linkedDiagnosis": ["Nephrotic Syndrome", "Lupus Nephritis"]
+},
+{
+  "name": "Ketosteril",
+  "indication": "Nutritional support in advanced CKD",
+  "working": "Amino acid supplement without nitrogen burden",
+  "composition": "Alpha-keto analogs of essential amino acids",
+  "linkedDiagnosis": ["CKD Stage 4", "CKD Stage 5 (ESRD)"]
+},
+{
+  "name": "Nephrosave Forte",
+  "indication": "CKD management supplement",
+  "working": "L-carnitine and essential nutrients for nephroprotection",
+  "composition": "L-Carnitine + Acetylcysteine + Alpha-lipoic acid",
+  "linkedDiagnosis": ["CKD Stage 3", "Diabetic Nephropathy"]
+},
+{
+  "name": "Nephrocaps",
+  "indication": "Vitamin supplement for dialysis patients",
+  "working": "B-complex, folic acid, and C for erythropoiesis support",
+  "composition": "Vitamin B1, B2, B6, B12, Folic Acid, Vitamin C",
+  "linkedDiagnosis": ["CKD Stage 5 (ESRD)", "Anemia of CKD"]
+},
+{
+  "name": "Sodium Bicarbonate 500",
+  "indication": "Metabolic acidosis in CKD",
+  "working": "Alkalinizes blood pH",
+  "composition": "Sodium bicarbonate 500mg",
+  "linkedDiagnosis": ["CKD Stage 4", "Bicarbonate < 22"]
+},
+{
+  "name": "Alfa D3",
+  "indication": "Secondary hyperparathyroidism in CKD",
+  "working": "Activated vitamin D for PTH control",
+  "composition": "Alfacalcidol 0.25mcg",
+  "linkedDiagnosis": ["CKD-MBD (Mineral Bone Disorder)", "High PTH"]
+},
+{
+  "name": "Ferinject",
+  "indication": "IV iron for anemia in CKD",
+  "working": "Parenteral iron therapy",
+  "composition": "Ferric carboxymaltose 500mg/10ml",
+  "linkedDiagnosis": ["CKD Stage 5 (ESRD)", "Anemia of CKD"]
+},
+{
+  "name": "Reclide MV",
+  "indication": "Type 2 diabetes in CKD patients",
+  "working": "Stimulates insulin release + vitamin support",
+  "composition": "Gliclazide + Metformin + Multivitamins",
+  "linkedDiagnosis": ["Diabetic Nephropathy"]
+},
+{
+  "name": "Jardiance 10",
+  "indication": "Diabetic kidney disease",
+  "working": "SGLT2 inhibitor reducing progression of CKD",
+  "composition": "Empagliflozin 10mg",
+  "linkedDiagnosis": ["Diabetic Nephropathy", "CKD Stage 3"]
+},
+{
+  "name": "Forxiga 10",
+  "indication": "CKD with or without diabetes",
+  "working": "SGLT2 inhibitor protective against renal decline",
+  "composition": "Dapagliflozin 10mg",
+  "linkedDiagnosis": ["CKD Stage 2", "Diabetic Nephropathy"]
+},
+{
+  "name": "Linagliptin 5",
+  "indication": "Diabetes in advanced CKD",
+  "working": "DPP-4 inhibitor safe in renal dysfunction",
+  "composition": "Linagliptin 5mg",
+  "linkedDiagnosis": ["CKD Stage 4", "Diabetic Nephropathy"]
+},
+{
+  "name": "Renolog",
+  "indication": "Nutritional supplement for dialysis patients",
+  "working": "Low protein, high calorie renal diet support",
+  "composition": "Protein-free renal supplement with essential vitamins",
+  "linkedDiagnosis": ["CKD Stage 5 (ESRD)"]
+},
+{
+  "name": "Renalcal",
+  "indication": "Parenteral nutrition in dialysis patients",
+  "working": "IV lipid and glucose-based nutritional mix",
+  "composition": "Amino acids, glucose, electrolytes",
+  "linkedDiagnosis": ["ESRD", "Malnourished CKD"]
+},
+{
+  "name": "Furosemide 40",
+  "indication": "Edema in CKD or CHF",
+  "working": "Loop diuretic",
+  "composition": "Furosemide 40mg",
+  "linkedDiagnosis": ["Edema", "CKD Stage 3"]
+},
+{
+  "name": "Amlodipine 5",
+  "indication": "Hypertension in CKD",
+  "working": "Calcium channel blocker",
+  "composition": "Amlodipine 5mg",
+  "linkedDiagnosis": ["Hypertensive Nephrosclerosis", "CKD Stage 2"]
+},
+{
+  "name": "Hydralazine 25",
+  "indication": "Resistant hypertension in CKD",
+  "working": "Vasodilator that lowers systemic vascular resistance",
+  "composition": "Hydralazine 25mg",
+  "linkedDiagnosis": ["CKD Stage 4", "Hypertension"]
+},
+{
+  "name": "Zyluric 300",
+  "indication": "Hyperuricemia or urate nephropathy",
+  "working": "Inhibits uric acid formation",
+  "composition": "Allopurinol 300mg",
+  "linkedDiagnosis": ["CKD Stage 3", "Stone Disease"]
+},
+{
+  "name": "Sompraz 40",
+  "indication": "Gastric protection in CKD",
+  "working": "PPI for GERD or peptic ulcers",
+  "composition": "Esomeprazole 40mg",
+  "linkedDiagnosis": ["NSAID Use", "CKD Stage 4"]
+},
+{
+  "name": "Ferinject",
+  "indication": "Iron deficiency anemia (IV route)",
+  "working": "Improves hemoglobin in ESA-treated CKD",
+  "composition": "Ferric carboxymaltose 500mg",
+  "linkedDiagnosis": ["Anemia of CKD"]
+},
+{
+  "name": "Calcitriol 0.25",
+  "indication": "CKD-related secondary hyperparathyroidism",
+  "working": "Active form of vitamin D3",
+  "composition": "Calcitriol 0.25mcg",
+  "linkedDiagnosis": ["CKD-MBD", "High PTH"]
+},
+{
+  "name": "Cresar 40",
+  "indication": "Proteinuria and hypertension in CKD",
+  "working": "ARB that reduces proteinuria and BP",
+  "composition": "Telmisartan 40mg",
+  "linkedDiagnosis": ["Microalbuminuria", "Hypertension"]
+},
+{
+  "name": "Ecosprin AV 75",
+  "indication": "CKD with atherosclerotic risk",
+  "working": "Antiplatelet + statin",
+  "composition": "Aspirin 75mg + Atorvastatin 10mg",
+  "linkedDiagnosis": ["Hypertensive Nephrosclerosis"]
+},
+{
+  "name": "Amlong 10",
+  "indication": "CKD with high BP",
+  "working": "CCB that lowers vascular resistance",
+  "composition": "Amlodipine 10mg",
+  "linkedDiagnosis": ["CKD Stage 2", "Hypertension"]
+},
+{
+  "name": "Telsartan H",
+  "indication": "CKD with uncontrolled BP",
+  "working": "ARB + Diuretic",
+  "composition": "Telmisartan + Hydrochlorothiazide",
+  "linkedDiagnosis": ["CKD Stage 3", "Hypertensive Nephrosclerosis"]
+},
+{
+  "name": "Azoran 50",
+  "indication": "Immunosuppressant for lupus nephritis",
+  "working": "Purine synthesis inhibitor",
+  "composition": "Azathioprine 50mg",
+  "linkedDiagnosis": ["Lupus Nephritis"]
+},
+{
+  "name": "Neoral",
+  "indication": "Post-transplant immunosuppression",
+  "working": "Calcineurin inhibitor",
+  "composition": "Cyclosporine 100mg",
+  "linkedDiagnosis": ["Post-Renal Transplant"]
+},
+{
+  "name": "Thalix 50",
+  "indication": "CKD with multiple myeloma",
+  "working": "Immunomodulator and anti-angiogenic",
+  "composition": "Thalidomide 50mg",
+  "linkedDiagnosis": ["Myeloma Kidney"]
+},
+{
+  "name": "Zospar",
+  "indication": "Dialysis patient infections",
+  "working": "Broad-spectrum IV antibiotic",
+  "composition": "Piperacillin + Tazobactam",
+  "linkedDiagnosis": ["Peritonitis", "Infected AV fistula"]
+},
+{
+  "name": "Monocef 1g",
+  "indication": "CKD with pyelonephritis or severe UTI",
+  "working": "Cephalosporin antibiotic",
+  "composition": "Ceftriaxone 1g",
+  "linkedDiagnosis": ["UTI", "CKD Stage 3"]
+},
+{
+  "name": "Meropenem 1g",
+  "indication": "Severe urosepsis in CKD",
+  "working": "Carbapenem class antibiotic",
+  "composition": "Meropenem 1g",
+  "linkedDiagnosis": ["Pyelonephritis", "Sepsis"]
+},
+{
+  "name": "Lasix 20",
+  "indication": "Mild edema in CKD",
+  "working": "Loop diuretic",
+  "composition": "Furosemide 20mg",
+  "linkedDiagnosis": ["CKD Stage 2", "Edema"]
+},
+{
+  "name": "Cranpac",
+  "indication": "UTI prevention in females with CKD",
+  "working": "Cranberry extract with probiotics",
+  "composition": "Cranberry + D-mannose + Probiotic blend",
+  "linkedDiagnosis": ["Recurrent UTI"]
+},
+{  "name": "Epoetin Alfa 4000",
+  "indication": "Anemia due to CKD or dialysis",
+  "working": "Stimulates red blood cell production",
+  "composition": "Erythropoietin alpha 4000 IU",
+  "linkedDiagnosis": ["Anemia of CKD", "CKD Stage 5 (ESRD)"]
+},
+{
+  "name": "Renoalfa",
+  "indication": "CKD with mineral bone disease",
+  "working": "Activated vitamin D analog",
+  "composition": "Alfacalcidol 0.25 mcg",
+  "linkedDiagnosis": ["CKD-MBD (Mineral Bone Disorder)"]
+},
+{
+  "name": "Sensipar",
+  "indication": "Secondary hyperparathyroidism in dialysis",
+  "working": "Calcimimetic agent that lowers PTH",
+  "composition": "Cinacalcet 30mg",
+  "linkedDiagnosis": ["High PTH", "CKD Stage 5 (ESRD)"]
+},
+{
+  "name": "Dytor 10",
+  "indication": "Edema or fluid overload in CKD/CHF",
+  "working": "Loop diuretic with longer action than furosemide",
+  "composition": "Torasemide 10mg",
+  "linkedDiagnosis": ["Edema", "CKD Stage 4"]
+},
+{
+  "name": "Renoactive",
+  "indication": "Nutritional support in early CKD",
+  "working": "Essential amino acids and antioxidants",
+  "composition": "Vitamin C, E, B-complex, selenium, zinc",
+  "linkedDiagnosis": ["CKD Stage 2", "CKD Stage 3"]
+},
+{
+  "name": "Valzaar 40",
+  "indication": "Proteinuria and high BP in CKD",
+  "working": "ARB that lowers BP and glomerular pressure",
+  "composition": "Valsartan 40mg",
+  "linkedDiagnosis": ["Microalbuminuria", "Hypertension"]
+},
+{
+  "name": "Xylistin 1MIU",
+  "indication": "MDR infections in dialysis or ICU patients",
+  "working": "Polymyxin antibiotic",
+  "composition": "Colistimethate sodium 1 million IU",
+  "linkedDiagnosis": ["Sepsis", "Infected AV Fistula"]
+},
+{
+  "name": "Tacrolimus 1",
+  "indication": "Post kidney transplant immunosuppression",
+  "working": "Calcineurin inhibitor",
+  "composition": "Tacrolimus 1mg",
+  "linkedDiagnosis": ["Post-Renal Transplant"]
+},
+{
+  "name": "Venofer",
+  "indication": "Iron-deficiency anemia in CKD",
+  "working": "IV iron preparation",
+  "composition": "Iron sucrose 100mg",
+  "linkedDiagnosis": ["Anemia of CKD", "Hemoglobin <11"]
+},
+{
+  "name": "Lupitros Eye Drops",
+  "indication": "Post-transplant Tacrolimus-induced glaucoma",
+  "working": "Prostaglandin analog for IOP reduction",
+  "composition": "Travoprost 0.004%",
+  "linkedDiagnosis": ["Tacrolimus Side Effect", "Post-Renal Transplant"]
+},
+{
+  "name": "Rozavel F",
+  "indication": "CKD with dyslipidemia",
+  "working": "Statin + fenofibrate for lipid control",
+  "composition": "Rosuvastatin 10mg + Fenofibrate 160mg",
+  "linkedDiagnosis": ["CKD Stage 3", "Nephrotic Syndrome"]
+},
+{
+  "name": "Cilacar 10",
+  "indication": "High BP in elderly CKD patients",
+  "working": "Dihydropyridine calcium channel blocker",
+  "composition": "Cilnidipine 10mg",
+  "linkedDiagnosis": ["Hypertension", "CKD Stage 3"]
+},
+{
+  "name": "Zincovit",
+  "indication": "Nutritional supplement in CKD-related fatigue",
+  "working": "Multivitamin and zinc for metabolic support",
+  "composition": "Zinc + B-complex + Vitamin C",
+  "linkedDiagnosis": ["Fatigue", "CKD"]
+},
+{
+  "name": "Ultracet",
+  "indication": "Pain in CKD when NSAIDs are avoided",
+  "working": "Tramadol + Paracetamol combo",
+  "composition": "Tramadol 37.5mg + Paracetamol 325mg",
+  "linkedDiagnosis": ["Flank Pain", "CKD", "Stone Disease"]
+},
+{
+  "name": "Dapsone",
+  "indication": "Treatment of lupus nephritis skin lesions",
+  "working": "Antibiotic with anti-inflammatory effects",
+  "composition": "Dapsone 100mg",
+  "linkedDiagnosis": ["Lupus Nephritis"]
+},
+{
+  "name": "Mesacol",
+  "indication": "IgA nephropathy with colitis",
+  "working": "Anti-inflammatory action in GI and renal mucosa",
+  "composition": "Mesalamine 400mg",
+  "linkedDiagnosis": ["IgA Nephropathy", "Associated IBD"]
+},
+{
+  "name": "Cymevene",
+  "indication": "CMV infection in renal transplant recipients",
+  "working": "Antiviral against CMV",
+  "composition": "Ganciclovir 500mg",
+  "linkedDiagnosis": ["Post-Renal Transplant"]
+},
+{
+  "name": "Cyclophil ME",
+  "indication": "Immunosuppressant in steroid-resistant nephrotic syndrome",
+  "working": "Cyclosporine microemulsion",
+  "composition": "Cyclosporine 50mg",
+  "linkedDiagnosis": ["Nephrotic Syndrome", "Steroid Resistant"]
+},
+{
+  "name": "Bactrim DS",
+  "indication": "Prophylaxis in immunosuppressed CKD patients",
+  "working": "Antibiotic against Pneumocystis jirovecii",
+  "composition": "Sulfamethoxazole + Trimethoprim",
+  "linkedDiagnosis": ["Post-Transplant", "Lupus Nephritis"]
+},
+{
+  "name": "Renvela",
+  "indication": "Phosphate binding in dialysis",
+  "working": "Non-calcium phosphate binder",
+  "composition": "Sevelamer carbonate 800mg",
+  "linkedDiagnosis": ["CKD-MBD", "High phosphate"]
+},
+{
+  "name": "Sangliard",
+  "indication": "Hyperkalemia",
+  "working": "Potassium binder",
+  "composition": "Sodium zirconium cyclosilicate",
+  "linkedDiagnosis": ["Hyperkalemia", "CKD Stage 4"]
+},
+{
+  "name": "Nefrotec DS",
+  "indication": "Ayurvedic support for UTI",
+  "working": "Alkalizes urine and supports renal health",
+  "composition": "Ayurvedic herbs including Shilapushpa",
+  "linkedDiagnosis": ["UTI", "Stone Disease"]
+},
+{
+  "name": "Renoprot",
+  "indication": "Renal support in early CKD",
+  "working": "Plant-based antioxidant formulation",
+  "composition": "Curcumin + Punarnava + Nettle leaf",
+  "linkedDiagnosis": ["CKD Stage 2", "CKD Stage 3"]
+},
+{
+  "name": "Floract",
+  "indication": "Probiotic for gut health in CKD",
+  "working": "Maintains gut microbiota balance",
+  "composition": "Lactobacillus acidophilus, Bifidobacterium",
+  "linkedDiagnosis": ["CKD Stage 4", "Frequent Antibiotic Use"]
+},
+{
+  "name": "Renopep",
+  "indication": "Supportive therapy in chronic kidney disease",
+  "working": "Peptides and amino acids to improve GFR",
+  "composition": "Bioactive peptides",
+  "linkedDiagnosis": ["CKD Stage 3", "Early Diabetic Nephropathy"]
+},
+{
+  "name": "Oxyspas",
+  "indication": "Urge incontinence in neurogenic bladder",
+  "working": "Anticholinergic smooth muscle relaxant",
+  "composition": "Oxybutynin 5mg",
+  "linkedDiagnosis": ["Neurogenic Bladder", "CKD"]
+},
+{
+  "name": "Soliten",
+  "indication": "CKD-related urinary urgency",
+  "working": "Selective M3 receptor antagonist",
+  "composition": "Solifenacin 5mg",
+  "linkedDiagnosis": ["Overactive Bladder", "CKD"]
+},
+{
+  "name": "Urotone",
+  "indication": "Atonic bladder in diabetics or spinal cord lesion",
+  "working": "Cholinergic agent to stimulate bladder",
+  "composition": "Bethanechol 25mg",
+  "linkedDiagnosis": ["Neurogenic Bladder", "Diabetic Nephropathy"]
+},
+{
+  "name": "Veltam Plus",
+  "indication": "CKD with BPH",
+  "working": "Alpha blocker + 5-alpha reductase inhibitor",
+  "composition": "Tamsulosin + Dutasteride",
+  "linkedDiagnosis": ["BPH", "CKD Stage 2"]
+},
+{
+  "name": "Pentosan",
+  "indication": "Interstitial cystitis with CKD",
+  "working": "Protects bladder mucosa",
+  "composition": "Pentosan polysulfate sodium",
+  "linkedDiagnosis": ["CKD with Bladder Pain"]
+},
+{
+  "name": "Lignox 2% Jelly",
+  "indication": "Urethral catheterization aid in CKD",
+  "working": "Local anesthetic for smooth insertion",
+  "composition": "Lignocaine Hydrochloride",
+  "linkedDiagnosis": ["Urinary Retention", "Post Renal Causes"]
+},
+{
+  "name": "Methycobal 500",
+  "indication": "Neuropathy in CKD and diabetes",
+  "working": "Methylcobalamin restores nerve function",
+  "composition": "Methylcobalamin 500mcg",
+  "linkedDiagnosis": ["CKD", "Diabetic Nephropathy"]
+}
+
 ]
