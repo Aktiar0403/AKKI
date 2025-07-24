@@ -270,6 +270,30 @@ document.getElementById('generate-diagnosis').addEventListener('click', () => {
 } else {
   document.getElementById('med-name').value = '';
 }
+function extractSuggestionsFromText(text) {
+  const suggestions = [];
+  const lines = text.split('\n');
+
+  for (let line of lines) {
+    // Get all *highlighted* items
+    const matches = line.match(/\*(.*?)\*/g);
+    if (matches) {
+      for (let match of matches) {
+        const clean = match.replace(/\*/g, '').trim();
+        if (clean.length > 0) {
+          suggestions.push({ suggestion: clean });
+        }
+      }
+    }
+
+    // Also include full clean line if it doesn’t look like a prompt
+    else if (!line.toLowerCase().includes('evaluate') && line.trim()) {
+      suggestions.push({ suggestion: line.trim() });
+    }
+  }
+
+  return suggestions;
+}
 
 
 // Rule save
