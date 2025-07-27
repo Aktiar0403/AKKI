@@ -3,6 +3,7 @@
 import { loadDiagnosisRulesFromFile, generateDiagnosisText, getMissingFields } from './diagnosis.js';
 import { loadMedicinesFromFile, getMedicinesForDiagnosis, getAutofillDetails } from './medicine.js';
 import { applyReferenceTooltips } from './inputhints.js';
+import { exportToPDF } from './html2pdf.js';
 
 let visitData = {};
 
@@ -11,6 +12,13 @@ window.addEventListener('DOMContentLoaded', async () => {
   const diagnosisOutput = document.querySelector('#diagnosis-output');
   const medicineOutput = document.querySelector('#medicine-output');
   const missingPrompt = document.querySelector('#missing-fields');
+  const printButton = document.querySelector('#print-button');
+if (printButton) {
+  printButton.addEventListener('click', () => {
+    exportToPDF('pdf-content', 'NephroCare_Prescription.pdf');
+  });
+}
+
 
   // Load rules and medicine database
   await loadDiagnosisRulesFromFile();
