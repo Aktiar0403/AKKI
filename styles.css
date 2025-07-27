@@ -315,3 +315,8 @@ input[type="number"].abnormal-range {
   font-family: 'Arial', sans-serif;
   color: #333;
 }
+/* in style.css */
+.has-tooltip {
+  border-bottom: 1px dotted #666;
+  cursor: help;
+}
