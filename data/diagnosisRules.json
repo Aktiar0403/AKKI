@@ -114,7 +114,7 @@
     ],
     "followUpAdvice": "Take the tablet after meals. Avoid in patients with uncontrolled blood pressure.",
     "missingFields": ["bicarbonate"]
-  }.
+  },
   {
     "diagnosis": "Nephrotic Syndrome",
     "doctorReason": "Massive proteinuria (>3.5 g/day) with edema suggests nephrotic syndrome.",
@@ -230,9 +230,7 @@
     ],
     "followUpAdvice": "Increase hydration. Urology referral may be required.",
     "missingFields": ["hydronephrosis", "flank-pain", "stones"]
-  }
-]
-[
+  },
   {
     "diagnosis": "Suspected NSAID-Induced AKI",
     "doctorReason": "Rising creatinine with history of NSAID use and oliguria indicates drug-induced kidney injury.",
@@ -348,9 +346,7 @@
     ],
     "followUpAdvice": "Might require dialysis planning. Reduce dietary protein if advised.",
     "missingFields": ["bicarbonate", "nausea", "vomiting"]
-  }
-]
-[
+  },
   {
     "diagnosis": "Hypernatremia with Oliguria",
     "doctorReason": "Sodium > 150 with decreased urine output suggests volume depletion or renal concentration defect.",
@@ -464,10 +460,7 @@
     ],
     "followUpAdvice": "Avoid high-potassium foods. Repeat test in 48 hours.",
     "missingFields": ["potassium"]
-  }
-]
-
-[
+  },
   {
     "diagnosis": "Secondary Hyperparathyroidism",
     "doctorReason": "High phosphate with low calcium suggests compensatory PTH elevation in CKD.",
@@ -585,10 +578,7 @@
     ],
     "followUpAdvice": "Don’t delay urology evaluation. Push fluids. Avoid NSAIDs in CKD.",
     "missingFields": ["creatinine", "stones", "flank-pain"]
-  }
-]
-
-  [
+  },
   {
     "diagnosis": "CKD with Uncontrolled Hypertension",
     "doctorReason": "Chronic kidney disease with elevated BP indicates poor renal perfusion and risk of progression.",
@@ -708,9 +698,7 @@
     ],
     "followUpAdvice": "Avoid contrast unless necessary. Pre-treat before scan and monitor kidney function after.",
     "missingFields": ["creatinine"]
-  }
-]
-[
+  },
   {
     "diagnosis": "Recurrent UTI in CKD",
     "doctorReason": "Frequent urinary tract infections in CKD increase the risk of permanent kidney damage.",
@@ -829,9 +817,7 @@
     ],
     "followUpAdvice": "Counseling may help. Sleep and mood tracking advised.",
     "missingFields": ["symptoms"]
-  }
-]
-[
+  },
   {
     "diagnosis": "CKD with Hyperuricemia",
     "doctorReason": "Elevated uric acid levels are common in CKD and may worsen kidney function.",
@@ -949,10 +935,7 @@
     ],
     "followUpAdvice": "Take phosphate binders with meals. Avoid dairy and cola drinks.",
     "missingFields": ["phosphate"]
-  }
-]
-
-[
+  },
   {
     "diagnosis": "CKD with Recurrent Stone Disease",
     "doctorReason": "CKD with history of renal stones increases the risk of obstruction and infections.",
@@ -1070,9 +1053,7 @@
     ],
     "followUpAdvice": "Talk to your nephrologist. Dialysis can improve your quality of life.",
     "missingFields": ["egfr", "symptoms"]
-  }
-]
-[
+  },
   {
     "diagnosis": "CKD with Recurrent Stone Disease",
     "doctorReason": "CKD with history of renal stones increases the risk of obstruction and infections.",
@@ -1190,9 +1171,7 @@
     ],
     "followUpAdvice": "Talk to your nephrologist. Dialysis can improve your quality of life.",
     "missingFields": ["egfr", "symptoms"]
-  }
-]
-[
+  },
   {
     "diagnosis": "CKD with Hyperchloremic Acidosis",
     "doctorReason": "Normal anion gap metabolic acidosis (bicarbonate < 22) common in tubulointerstitial disease.",
@@ -1300,9 +1279,7 @@
     ],
     "followUpAdvice": "Do not delay evaluation. Maintain regular dialysis and review symptoms.",
     "missingFields": ["urea"]
-  }
-]
-[
+  },
   {
     "diagnosis": "Lupus Nephritis Suspicion",
     "doctorReason": "Young female with proteinuria, hematuria, or low C3/C4 may have lupus nephritis.",
@@ -1416,10 +1393,7 @@
     ],
     "followUpAdvice": "Usually resolves with time. Monitor BP and kidney function.",
     "missingFields": ["aso", "creatinine"]
-  }
-]
-
-[
+  },
   {
     "diagnosis": "Ischemic ATN (Acute Tubular Necrosis)",
     "doctorReason": "Prolonged hypotension or shock causing AKI with granular casts indicates ischemic ATN.",
@@ -1561,10 +1535,7 @@
     "suggestedMedicines": [],
     "followUpAdvice": "Adjust or stop medicines after consulting doctor. Recheck labs weekly.",
     "missingFields": ["electrolytes", "drug history"]
-  }
-]
-
-[
+  },
   {
     "diagnosis": "Diabetic Nephropathy with Retinopathy",
     "doctorReason": "Presence of diabetic retinopathy strengthens diagnosis of diabetic kidney disease.",
@@ -1712,9 +1683,7 @@
     ],
     "followUpAdvice": "Fluid intake monitoring critical. Confirm cause with endocrinologist.",
     "missingFields": ["polyuria", "sodium"]
-  }
-]
-[
+  },
   {
     "diagnosis": "Lithium-Induced Nephropathy",
     "doctorReason": "Chronic lithium use may cause CKD, nephrogenic DI, or interstitial nephritis.",
