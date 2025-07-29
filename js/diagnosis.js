@@ -3,7 +3,7 @@
 export let diagnosisRules = [];
 
 // Load diagnosis rules from external enriched JSON file
-export async function loadDiagnosisRulesFromFile(url = '.data/diagnosisRules.json') {
+export async function loadDiagnosisRulesFromFile(url = './data/diagnosisRules.json') {
   try {
     const response = await fetch(url);
     if (!response.ok) throw new Error('Failed to load diagnosis rules');
@@ -31,47 +31,49 @@ export function evaluateCondition(cond, visit) {
   }
 }
 
-// Evaluate whether a rule is triggered
+// Evaluate a full rule (simple/multi/compound)
 export function evaluateRule(rule, visit) {
-  if (rule.type === "simple") {
+  if (rule.conditions) {
+    return rule.conditions.every(cond => evaluateCondition(cond, visit));
+  }
+  if (rule.test && rule.operator && rule.threshold !== undefined) {
     return evaluateCondition({
-      section: "blood",
+      section: 'blood',
       field: rule.test,
       operator: rule.operator,
       value: rule.threshold
     }, visit);
   }
-
-  if (rule.type === "multi" || rule.type === "compound") {
-    return rule.conditions.every(cond => evaluateCondition(cond, visit));
-  }
-
   return false;
 }
 
-// Generate diagnosis output for UI display or PDF
+// Main function to return enriched diagnosis objects
 export function generateDiagnosisText(visit) {
-  const matches = [];
-  for (const rule of diagnosisRules) {
-    if (evaluateRule(rule, visit)) {
-      matches.push(`- ${rule.diagnosis || rule.suggestion} (Reason: ${rule.doctorReason || rule.reason})`);
-    }
-  }
-  return matches.length ? matches.join('\n') : "No diagnosis suggestions matched.";
+  return diagnosisRules.filter(rule => evaluateRule(rule, visit));
 }
 
-// Return all missing fields across rules for prompting the user
+// Extract missing fields from rules that could have matched
 export function getMissingFields(visit) {
-  const needed = new Set();
+  const missing = new Set();
   for (const rule of diagnosisRules) {
-    if (rule.missingFields) {
-      for (const field of rule.missingFields) {
-        const [section, key] = field.includes('-') ? field.split('-') : ["", field];
-        if (!visit[section] || visit[section][key] === undefined) {
-          needed.add(field);
+    if (!evaluateRule(rule, visit) && rule.conditions) {
+      rule.conditions.forEach(cond => {
+        const section = visit[cond.section];
+        if (!section || section[cond.field] === undefined || section[cond.field] === "") {
+          missing.add(`${cond.section}.${cond.field}`);
         }
-      }
+      });
     }
   }
-  return Array.from(needed);
+  return Array.from(missing);
+}
+
+export function addDiagnosisRule(rule) {
+  diagnosisRules.push(rule);
+  localStorage.setItem('diagnosisRules', JSON.stringify(diagnosisRules));
+}
+
+export function deleteDiagnosisRule(index) {
+  diagnosisRules.splice(index, 1);
+  localStorage.setItem('diagnosisRules', JSON.stringify(diagnosisRules));
 }
